@@ -1,0 +1,71 @@
+/* Stil za cijelo tijelo stranice s pozadinskom slikom */
+body {
+    background-image: url('pozadina.jpg'); /* Putanja do slike */
+    background-size: cover; /* Podesi veličinu slike da pokrije cijelu stranicu */
+    background-position: center; /* Centriraj sliku */
+    background-repeat: no-repeat; /* Spriječi ponavljanje slike */
+    margin: 0; /* Ukloni marginu oko tijela stranice */
+    padding: 0; /* Ukloni padding oko tijela stranice */
+    font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, "serif"; /* Odaberi font za cijelu stranicu */
+    color: #333; /* Postavi osnovnu boju teksta */
+}
+
+/* Stil za kontejner */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertikalno centriranje */
+    align-items: center; /* Horizontalno centriranje */
+    min-height: 100vh; /* Osiguraj da kontejner pokriva cijelu visinu viewport-a */
+    padding: 20px; /* Dodaj padding oko sadržaja */
+    box-sizing: border-box; /* Uključi padding u ukupnu visinu i širinu */
+    text-align: center; /* Centriraj sav tekst unutar kontejnera */
+}
+
+/* Stil za centriranje teksta */
+.center-text {
+    text-align: center;
+}
+
+/* Stil za gumb za povratak na vrh */
+.scroll-to-top {
+    position: fixed; /* Pozicija fiksna za prikaz na dnu stranice */
+    bottom: 20px; /* Razmak od dna */
+    right: 20px; /* Razmak s desne strane */
+    padding: 10px 20px; /* Padding oko gumba */
+    background-color: #007bff; /* Plava boja gumba */
+    color: #fff; /* Bijela boja teksta */
+    border: none; /* Uklanja granice */
+    border-radius: 5px; /* Zaobljeni kutovi */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sjena oko gumba */
+    cursor: pointer; /* Pokazuje da je gumb klikabilan */
+    display: none; /* Sakriva gumb dok se ne pomakne stranica */
+    transition: opacity 0.3s; /* Glatka promjena opaciteta */
+}
+
+.scroll-to-top.show {
+    display: block; /* Prikazuje gumb kad je potrebno */
+}
+
+/* Stil za linkove u navigaciji */
+.nav-bar a {
+    text-decoration: none; /* Ukloni podcrtavanje s linkova */
+    color: #007bff; /* Plava boja za linkove */
+    font-weight: bold; /* Podebljaj tekst linkova */
+    margin: 10px 0; /* Razmak između linkova */
+    display: inline-block; /* Omogućava dodavanje margine oko linkova */
+}
+
+/* Stil za slike u portfelju */
+.example-images .image-container {
+    margin: 10px; /* Razmak oko kontejnera */
+}
+
+.example-images img {
+    width: 100%; /* Postavi širinu slike na 100% širine kontejnera */
+    height: auto; /* Očuvaj omjer slike */
+    max-width: 500px; /* Maksimalna širina slike */
+    border: 1px solid #ddd; /* Lagana granica oko slike */
+    border-radius: 8px; /* Zaobljeni kutovi */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sjena oko slike */
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O meni - Gabrijela Fran</title>
+    <link rel="stylesheet" href="stil.css"> <!-- Povezivanje CSS-a -->
+</head>
+<body>
+	<a href="index.html">Vrati me na početak</a>
+    <div class="container">
+        <!-- Gumb za povratak na vrh -->
+        <button id="scrollToTopBtn" class="scroll-to-top">Vrati me na početak</button>
+
+        <h1 class="center-text">O meni</h1>
+        <p class="center-text">
+            Ja sam Gabrijela Fran, studentica Grafičkog fakulteta u Zagrebu na prijediplomskom studiju smjera dizajn grafičkog proizvoda. Kroz studij sam već radila na nekoliko projekata, kako samostalno tako i u timu, što mi je omogućilo da razvijem svoje vještine i steknem iskustvo u različitim područjima dizajna.
+
+            Strastvena sam prema svim oblicima kreativnog izražavanja, uključujući crtanje, slikanje, fotografiranje i uređivanje slika, što je i razlog zbog kojeg sam se odlučila za ovaj studijski put. Uz ljubav prema dizajnu, bavim se sportom, što mi pomaže da ostanem organizirana i uspješno balansiram sve svoje obaveze.
+        </p>
+    </div>
+
+    <script>
+        // Prikazuje gumb kad se stranica pomakne
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('scrollToTopBtn');
+            if (window.scrollY > 300) {
+                btn.classList.add('show');
+            } else {
+                btn.classList.remove('show');
+            }
+        });
+
+        // Pomakne stranicu na vrh kad se klikne gumb
+        document.getElementById('scrollToTopBtn').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
