@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabrijela Fran - Početna</title>
+    <link rel="stylesheet" href="stil.css"> <!-- Povezivanje CSS-a -->
+</head>
+<body>
+    <div class="container">
+        <h1 class="center-text">Gabrijela Fran</h1>
+        <p class="center-text">Dobrodošli na moju stranicu!</p>
+        <p class="center-text">
+            Ja sam Gabrijela Fran, studentica grafičkog dizajna sa strašću prema stvaranju i istraživanju vizualnog izraza. 
+            S okom za detalje i ljubavlju prema umjetnosti, moj cilj je pretvoriti ideje u upečatljive dizajnerske priče. 
+            Pozivam vas da zavirite u moj svijet dizajna, inspiracije i kreacije.
+        </p>
+        
+        <hr>
+
+        <!-- Navigacija -->
+        <div class="nav-bar">
+            <a href="omeni.html">O meni</a><br>
+            <a href="mojiradovi.html">Moji radovi</a>
+        </div>
+
+        <hr>
+
+        <!-- Neuređeni popis za demonstraciju stilova -->
+        <h2 class="center-text">Vještine:</h2>
+        <ul>
+            <li><strong>Grafički dizajn</strong></li>
+            <li><em>Fotografija</em></li>
+            <li>Digitalna ilustracija</li>
+        </ul>
+
+        <!-- Formular za kontakt -->
+        <h2 class="center-text">Kontaktirajte me</h2>
+        <form class="contact-form">
+            <fieldset>
+                <legend>Kontakt podaci</legend>
+                <label for="name">Ime:</label>
+                <input type="text" id="name" name="name" placeholder="Unesite ime" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Unesite email" required>
+                
+                <button type="submit">Pošalji</button>
+            </fieldset>
+        </form>
+    </div>
+
+    <!-- Gumb za povratak na vrh -->
+    <button id="scrollToTopBtn" class="scroll-to-top">Vrati me na početak</button>
+
+    <script>
+        // Prikazuje gumb kad se stranica pomakne
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('scrollToTopBtn');
+            if (window.scrollY > 300) {
+                btn.classList.add('show');
+            } else {
+                btn.classList.remove('show');
+            }
+        });
+
+        // Pomakne stranicu na vrh kad se klikne gumb
+        document.getElementById('scrollToTopBtn').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
