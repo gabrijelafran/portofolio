@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moji radovi - Gabrijela Fran</title>
+    <link rel="stylesheet" href="stil.css"> <!-- Povezivanje CSS-a -->
+</head>
+<body>
+
+    <!-- Link za povratak na početnu stranicu -->
+    <div class="nav-bar">
+        <a href="index.html" class="button-link">Vrati me na početak</a>
+    </div>
+
+    <!-- Kontejner za sadržaj stranice -->
+    <div class="container">
+        <!-- Gumb za povratak na vrh -->
+        <button id="scrollToTopBtn" class="scroll-to-top">Vrati me na početak</button>
+
+        <h1 class="center-text">Moji radovi</h1>
+        
+        <!-- Portfelj radova -->
+        <div class="portfolio">
+            <a href="photoshop.html" class="portfolio-item button-link">
+                <p>Photoshop - Pikselgrafika</p>
+            </a>
+            <a href="videoobrada.html" class="portfolio-item button-link">
+                <p>Videoobrada</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Skripta za prikazivanje gumba za povratak na vrh prilikom skrolanja -->
+    <script>
+        // Prikazuje gumb kad se stranica pomakne
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('scrollToTopBtn');
+            if (window.scrollY > 300) {
+                btn.classList.add('show');
+            } else {
+                btn.classList.remove('show');
+            }
+        });
+
+        // Pomakne stranicu na vrh kad se klikne gumb
+        document.getElementById('scrollToTopBtn').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

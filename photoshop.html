@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moji radovi - Gabrijela Fran</title>
+    <link rel="stylesheet" href="stil.css"> <!-- Povezivanje CSS-a -->
+</head>
+<body>
+    <a href="index.html">Vrati me na početak</a>
+    <div class="container">
+        <!-- Gumb za povratak na vrh -->
+        <button id="scrollToTopBtn" class="scroll-to-top">Vrati me na početak</button>
+            </a>
+        </div>
+
+        <section class="example">
+            <h2>Retuširanje</h2>
+            <div class="example-images">
+                <div class="image-container">
+                    <h3>Prije</h3>
+                    <img src="retusiranje.jpeg" alt="Retuširanje - Prije" onclick="openImage(this)">
+                </div>
+                <div class="image-container">
+                    <h3>Poslije</h3>
+                    <img src="GabrijelaFran_v5.jpg" alt="Retuširanje - Poslije" onclick="openImage(this)">
+                </div>
+            </div>
+        </section>
+
+        <section class="example">
+            <h2>Koloriranje</h2>
+            <div class="example-images">
+                <div class="image-container">
+                    <h3>Prije</h3>
+                    <img src="koloriranje.jpg" alt="Koloriranje - Prije" onclick="openImage(this)">
+                </div>
+                <div class="image-container">
+                    <h3>Poslije</h3>
+                    <img src="GabrijelaFran_6.jpg" alt="Koloriranje - Poslije" onclick="openImage(this)">
+                </div>
+                <div class="image-container">
+                    <h3>Drugi primjer koloriranja</h3>
+                    <img src="GabrijelaFran_v633.jpg" alt="Koloriranje - Drugi primjer" onclick="openImage(this)">
+                </div>
+            </div>
+        </section>
+
+        <section class="example">
+            <h2>Fotomontaže</h2>
+            <div class="example-images">
+                <div class="image-container">
+                    <h3>Prvi primjer</h3>
+                    <img src="GabrijelaFran_v7.jpg" alt="Fotomontaža - Prvi primjer" onclick="openImage(this)">
+                </div>
+                <div class="image-container">
+                    <h3>Drugi primjer</h3>
+                    <img src="projektni.jpg" alt="Fotomontaža - Drugi primjer" onclick="openImage(this)">
+                </div>
+            </div>
+        </section>
+
+        <section class="example">
+            <h2>Dodavanje printa/loga</h2>
+            <div class="example-images print-logos">
+                <div class="image-container">
+                    <h3>Primjer 1</h3>
+                    <img src="boca.png" alt="Print/Logo - Primjer 1" onclick="openImage(this)">
+                </div>
+                <div class="image-container">
+                    <h3>Primjer 2</h3>
+                    <img src="salica.png" alt="Print/Logo - Primjer 2" onclick="openImage(this)">
+                </div>
+                <div class="image-container">
+                    <h3>Primjer 3</h3>
+                    <img src="totebag.png" alt="Print/Logo - Primjer 3" onclick="openImage(this)">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sekcija za promotivni plakat -->
+        <section class="promotional-poster">
+            <h2>Promotivni Plakat</h2>
+            <div class="poster-container">
+                <img src="promo.png" alt="Promotivni Plakat" onclick="openImage(this)">
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Funkcija za prikaz slike u većem formatu
+        function openImage(img) {
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = 0;
+            modal.style.left = 0;
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            modal.style.display = 'flex';
+            modal.style.alignItems = 'center';
+            modal.style.justifyContent = 'center';
+            modal.style.zIndex = 1000;
+
+            const modalImg = document.createElement('img');
+            modalImg.src = img.src;
+            modalImg.style.maxWidth = '80%';
+            modalImg.style.maxHeight = '80%';
+            modalImg.style.borderRadius = '12px';
+
+            modal.appendChild(modalImg);
+            document.body.appendChild(modal);
+
+            modal.addEventListener('click', function() {
+                modal.remove();
+            });
+        }
+
+        // Prikazuje gumb kad se stranica pomakne
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('scrollToTopBtn');
+            if (window.scrollY > 300) {
+                btn.classList.add('show');
+            } else {
+                btn.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>

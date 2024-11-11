@@ -1,82 +1,124 @@
+/* Globalni stil za tijelo */
 body {
     font-family: 'Roboto', sans-serif;
-    background-image: url('your-background-image.jpg'); /* Zamijenite s vašom pozadinskom slikom */
-    background-size: cover; /* Pokriva cijeli ekran */
-    background-position: center; /* Centriraj pozadinsku sliku */
-    color: #333; /* Boja teksta */
+    background-color: #A078B6; /* Tamna lila pozadina */
+    color: #333;
     margin: 0;
     padding: 0;
 }
 
+/* Kontejner za sadržaj */
 .container {
-    max-width: 800px; /* Maksimalna širina kontejnera */
-    margin: 0 auto; /* Centriraj kontejner */
-    padding: 20px; /* Unutarnje margine */
-    background: rgba(255, 255, 255, 0.9); /* Bijela pozadina s prozirnošću */
-    border-radius: 8px; /* Zaobljeni rubovi */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Lagana sjena */
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #F4E1FF; /* Svijetla krem lila za kontejner */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.center-text {
-    text-align: center; /* Poravnavanje teksta na sredinu */
+/* Naslovi */
+h1, h2 {
+    text-align: center;
+    color: #5D3A73;
 }
 
-.nav-bar {
-    margin: 20px 0; /* Margina oko navigacije */
-}
-
-.nav-bar a {
-    text-decoration: none; /* Ukloni podcrtavanje */
-    color: #007BFF; /* Plava boja za linkove */
-    font-weight: bold; /* Podebljaj tekst */
-}
-
-.nav-bar a:hover {
-    text-decoration: underline; /* Podcrtavanje na hover */
-}
-
-.portfolio {
-    display: flex; /* Koristi flexbox */
-    flex-wrap: wrap; /* Omogućuje prelazak u novi red */
-    justify-content: center; /* Poravnaj sadržaj u sredini */
-}
-
-.portfolio-item {
-    margin: 15px; /* Margina između stavki */
-    text-align: center; /* Poravnanje teksta na sredinu */
-}
-
+/* Poravnanje slika u sekcijama */
 .example-images {
-    display: flex; /* Koristi flexbox za slike */
-    justify-content: space-between; /* Prostor između slika */
-    flex-wrap: wrap; /* Omogućuje prelazak u novi red */
+    display: flex;
+    flex-wrap: wrap; /* Omogućuje prelazak slika u novi red */
+    gap: 20px; /* Razmak između slika */
+    margin-top: 20px;
+    justify-content: space-between; /* Distribuira slike u redovima */
 }
 
 .image-container {
-    flex: 1; /* Svaka slika zauzima jednaku količinu prostora */
-    margin: 10px; /* Margina oko slika */
-    max-width: 300px; /* Maksimalna širina slika */
+    flex: 1 1 48%; /* Svaka slika zauzima otprilike polovicu širine */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .image-container img {
-    width: 100%; /* Slika će zauzeti 100% širine kontejnera */
-    height: auto; /* Održava omjer stranica */
-    border-radius: 5px; /* Zaobljeni rubovi slika */
+    width: 100%; /* Slika zauzima cijelu širinu kontejnera */
+    max-width: 300px; /* Maksimalna širina slike */
+    height: auto;
+    border-radius: 8px; /* Zaobljeni kutovi */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    cursor: pointer; /* Pokazuje da je slika interaktivna */
+    transition: transform 0.3s ease; /* Efekt proširivanja pri hoveru */
 }
 
-.scroll-to-top {
-    position: fixed; /* Fiksna pozicija */
-    bottom: 20px; /* Od dna */
-    right: 20px; /* Od desnog ruba */
-    display: none; /* Početno skriven */
-    background-color: #007BFF; /* Plava pozadina */
-    color: white; /* Bijela boja teksta */
-    border: none; /* Bez okvira */
-    padding: 10px 15px; /* Unutarnje margine */
-    border-radius: 5px; /* Zaobljeni rubovi */
-    cursor: pointer; /* Kursor ruke na hover */
+.image-container img:hover {
+    transform: scale(1.05); /* Lagano proširivanje pri hoveru */
 }
 
-.scroll-to-top.show {
-    display: block; /* Pokaži gumb kada je potrebno */
+/* Za smanjivanje posljednje slike */
+.promotional-poster img {
+    width: 80%;
+    max-width: 200px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Stil za gumb za povratak na vrh */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: #5D3A73;
+    color: white;
+    padding: 12px 18px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+#scrollToTopBtn.show {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
+
+#scrollToTopBtn:hover {
+    background-color: #7E5A99; /* Svjetlija lila za hover */
+    transform: scale(1.1);
+}
+
+/* Stil za navigaciju i linkove */
+a {
+    text-decoration: none;
+    color: #5D3A73;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+a:hover {
+    color: #7E5A99;
+    transform: scale(1.1);
+}
+
+/* Stil za Dodavanje printa/loga sekciju */
+.example-images.print-logos {
+    display: flex;
+    justify-content: space-between; /* Poravnava slike u red */
+    gap: 20px;
+    flex-wrap: nowrap; /* Sprječava prelazak slika u novi red */
+}
+
+.print-logos .image-container {
+    flex: 1 1 30%; /* Svaka slika će zauzimati 30% širine */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
